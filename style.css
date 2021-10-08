@@ -1,0 +1,224 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+input[type="text"] {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+  border-width: 0 0 5px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 38px;
+  font-size: 35px;
+}
+input::placeholder {
+  color: #fff;
+}
+input:focus {
+  outline: 0;
+}
+button {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+#wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+#wrap::before {
+  position: absolute;
+  top: 100px;
+  bottom: 100px;
+  right: 0;
+  left: 0;
+  /* background: rgba(255, 255, 255, 0.3); */
+  content: "";
+}
+#wrap > section {
+  position: relative;
+  z-index: 2;
+}
+#clock {
+  text-align: center;
+  font-size: 100px;
+  margin-bottom: 50px;
+}
+#clock span {
+  font-family: "Oswald", sans-serif;
+}
+
+#weather {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+}
+
+#weather .weather {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+#quote {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+}
+#quote .quote {
+  font-size: 1em;
+  margin-bottom: 5px;
+  display: block;
+}
+#quote .author {
+  font-size: 0.8em;
+}
+
+#login-form h2 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#login-form input {
+  text-align: center;
+}
+
+#greeting {
+  margin-bottom: 20px;
+  font-size: 50px;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+}
+#greeting > span {
+  position: relative;
+}
+#greeting button {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(100% + 10px);
+  width: 40px;
+  height: 40px;
+  border: 0;
+  font-weight: 400;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  opacity: 0;
+  padding-left: 40px;
+  text-align: left;
+}
+#greeting button em {
+  font-style: normal;
+  opacity: 0;
+}
+#greeting:hover button {
+  opacity: 1;
+  transition: all 0.5s;
+}
+#greeting button::after {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 13px;
+  width: 15px;
+  height: 3px;
+  background-color: #fff;
+  content: "";
+}
+#greeting button::before {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 19px;
+  width: 3px;
+  height: 15px;
+  background-color: #fff;
+  content: "";
+}
+#greeting button:hover {
+  width: 100px;
+  transition: all 0.5s;
+}
+#greeting button:hover em {
+  opacity: 1;
+  transition: all 0.5s 0.3s;
+}
+#greeting button:hover::after,
+#greeting button:hover::before {
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+#todo-toggle {
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px 20px;
+  border-radius: 50px;
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  animation: todoTogglemove 0.5s infinite alternate forwards;
+}
+@keyframes todoTogglemove {
+  0% {
+    right: 50px;
+  }
+  100% {
+    right: 43px;
+  }
+}
+
+.right-section {
+  padding-left: 100px;
+  width: 500px;
+}
+
+#todo-form {
+  margin-bottom: 20px;
+}
+
+#todo-list li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 3px 40px 5px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  border-radius: 15px;
+  color: #000;
+}
+#todo-list li.complete {
+  opacity: 0.5;
+}
+#todo-list li.complete span {
+  text-decoration: line-through;
+}
+
+#todo-list li button {
+  background: none;
+  border: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 12px);
+}
+#todo-list li button.del {
+  right: 10px;
+}
+#todo-list li button.check {
+  left: 10px;
+}
